@@ -6,6 +6,7 @@ import com.alibaba.excel.read.listener.ReadListener;
 import com.alibaba.excel.util.ListUtils;
 import com.alibaba.fastjson.JSON;
 import com.ks.ny.entity.vo.ExcelReadVO;
+import com.ks.ny.entity.vo.SteelPipeExcelVO;
 import com.ks.ny.service.ExcelService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,16 +20,15 @@ public class ExcelServiceImpl implements ExcelService {
     public String excelParse(MultipartFile file) throws IOException {
         InputStream inputStream = file.getInputStream();
 
-        EasyExcel.read(inputStream, ExcelReadVO.class, new ReadListener<ExcelReadVO>() {
-            private static final int BATCH_COUNT = 5;
+        EasyExcel.read(inputStream, SteelPipeExcelVO.class, new ReadListener<SteelPipeExcelVO>() {
+            private static final int BATCH_COUNT = 50;
             /**
              * 缓存的数据
              */
-            private List<ExcelReadVO> cachedDataList = ListUtils.newArrayListWithExpectedSize(BATCH_COUNT);
+            private List<SteelPipeExcelVO> cachedDataList = ListUtils.newArrayListWithExpectedSize(BATCH_COUNT);
             @Override
-            public void invoke(ExcelReadVO excelReadVO, AnalysisContext analysisContext) {
-                System.out.println(file.getOriginalFilename());
-                cachedDataList.add(excelReadVO);
+            public void invoke(SteelPipeExcelVO steelPipeExcelVO, AnalysisContext analysisContext) {
+                cachedDataList.add(steelPipeExcelVO);
                 System.out.println(JSON.toJSONString(cachedDataList.get(cachedDataList.size()-1)));
                 if (cachedDataList.size() >= BATCH_COUNT) {
                     // 存储完成清理 list
