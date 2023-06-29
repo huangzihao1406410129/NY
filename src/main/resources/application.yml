@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://39.107.158.9 :3306/H3?characterEncoding=UTF-8
-    username: root
-    password: root
+    username: root123
+    password: root123
   servlet:
     multipart:
       max-request-size: 10MB
