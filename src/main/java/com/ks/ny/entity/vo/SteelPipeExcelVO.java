@@ -5,7 +5,7 @@ import com.alibaba.excel.annotation.ExcelProperty;
 public class SteelPipeExcelVO {
 
     @ExcelProperty("记录ID(不可修改)")
-    private String objectId;
+    private String parentObjectId;
     //数据标题
     @ExcelProperty("数据标题(不可修改)")
     private String name;
@@ -87,6 +87,7 @@ public class SteelPipeExcelVO {
     //宽/mm
     @ExcelProperty("宽/mm")
     private Double width;
+
     //入库总数量/mm
     @ExcelProperty("入库总数量/mm")
     private Double inboundLength;
@@ -104,16 +105,16 @@ public class SteelPipeExcelVO {
     private Double inventoryWeight;
     //质保号库存数量mm
     @ExcelProperty("质保号库存数量mm")
-    private Double warrantyNumbeLength;
+    private Double warrantyNumberLength;
 
-    public String getObjectId() {
-        return objectId;
+
+    public String getParentObjectId() {
+        return parentObjectId;
     }
 
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
+    public void setParentObjectId(String parentObjectId) {
+        this.parentObjectId = parentObjectId;
     }
-
     public String getName() {
         return name;
     }
@@ -370,11 +371,11 @@ public class SteelPipeExcelVO {
         this.inventoryWeight = inventoryWeight;
     }
 
-    public Double getWarrantyNumbeLength() {
-        return warrantyNumbeLength;
+    public Double getWarrantyNumberLength() {
+        return warrantyNumberLength;
     }
 
-    public void setWarrantyNumbeLength(Double warrantyNumbeLength) {
-        this.warrantyNumbeLength = warrantyNumbeLength;
+    public void setWarrantyNumberLength(Double warrantyNumberLength) {
+        this.warrantyNumberLength = warrantyNumberLength;
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
+import java.util.List;
 
 
 @Controller
@@ -52,12 +53,12 @@ public class IndexController {
 
     @PostMapping(value = "/inputExcel")
     @ResponseBody
-    public String inputExcel(@RequestParam("file") MultipartFile file,
-                             HttpServletRequest res) throws IOException {
+    public ResultDate inputExcel(@RequestParam("file") MultipartFile file,
+                                       HttpServletRequest res) throws IOException {
         if (file.isEmpty()){
-            return "文件对象为空";
+            return ResultDate.success("空文件");
         }
-        return excelService.excelParse(file);
+        return ResultDate.success(excelService.excelParse(file));
     }
 
 
