@@ -5,7 +5,7 @@ import com.alibaba.excel.annotation.ExcelProperty;
 public class SteelPipeExcelVO {
 
     @ExcelProperty("记录ID(不可修改)")
-    private String parentObjectId;
+    private String objectId;
     //数据标题
     @ExcelProperty("数据标题(不可修改)")
     private String name;
@@ -109,11 +109,11 @@ public class SteelPipeExcelVO {
 
 
     public String getParentObjectId() {
-        return parentObjectId;
+        return objectId;
     }
 
     public void setParentObjectId(String parentObjectId) {
-        this.parentObjectId = parentObjectId;
+        this.objectId = parentObjectId;
     }
     public String getName() {
         return name;

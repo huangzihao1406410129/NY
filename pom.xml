@@ -84,7 +84,11 @@
             <!--      optional 表示依赖是否向下传递 true表示不向下传递  默认值是false向下传递      -->
             <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>com.gitee.sunchenbin.mybatis.actable</groupId>
+            <artifactId>mybatis-enhance-actable</artifactId>
+            <version>1.1.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
 

@@ -82,7 +82,7 @@ public class SteelPipe extends Model<SteelPipe> {
     //理论剩余重量/kg
     private Double inventoryWeight;
     //质保号库存数量mm
-    private Double warrantyNumbeLength;
+    private Double warrantyNumberLength;
 
 
     public String getObjectId() {
@@ -349,12 +349,12 @@ public class SteelPipe extends Model<SteelPipe> {
         this.inventoryWeight = inventoryWeight;
     }
 
-    public Double getWarrantyNumbeLength() {
-        return warrantyNumbeLength;
+    public Double getWarrantyNumberLength() {
+        return warrantyNumberLength;
     }
 
-    public void setWarrantyNumbeLength(Double warrantyNumbeLength) {
-        this.warrantyNumbeLength = warrantyNumbeLength;
+    public void setWarrantyNumberLength(Double warrantyNumbeLength) {
+        this.warrantyNumberLength = warrantyNumbeLength;
     }
 
     /**
