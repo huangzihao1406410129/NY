@@ -12,11 +12,11 @@ import com.baomidou.mybatisplus.extension.activerecord.Model;
  */
 @TableName("warranty_number_inventory")
 public class WarrantyNumberInventory extends Model<WarrantyNumberInventory> {
-    //父id
-    private String parentObjectid;
     //记录ID(不可修改)
     @TableId
-    private String objectid;
+    private String objectId;
+    //父id
+    private String parentObjectId;
     //质保号
     private String warrantyNumber;
     //入库总长度mm
@@ -46,20 +46,20 @@ public class WarrantyNumberInventory extends Model<WarrantyNumberInventory> {
     //区域5剩余长度/mm
     private Integer warrantyNumberRegion5Length;
 
-    public String getParentObjectid() {
-        return parentObjectid;
+    public String getParentObjectId() {
+        return parentObjectId;
     }
 
-    public void setParentObjectid(String parentObjectid) {
-        this.parentObjectid = parentObjectid;
+    public void setParentObjectId(String parentObjectId) {
+        this.parentObjectId = parentObjectId;
     }
 
-    public String getObjectid() {
-        return objectid;
+    public String getObjectId() {
+        return objectId;
     }
 
-    public void setObjectid(String objectid) {
-        this.objectid = objectid;
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
     }
 
     public String getWarrantyNumber() {

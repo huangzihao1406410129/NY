@@ -108,11 +108,11 @@ public class SteelPipeExcelVO {
     private Double warrantyNumberLength;
 
 
-    public String getParentObjectId() {
+    public String getObjectId() {
         return objectId;
     }
 
-    public void setParentObjectId(String parentObjectId) {
+    public void setObjectId(String parentObjectId) {
         this.objectId = parentObjectId;
     }
     public String getName() {

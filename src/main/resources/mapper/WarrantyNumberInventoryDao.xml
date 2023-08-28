@@ -3,8 +3,8 @@
 <mapper namespace="com.ks.ny.dao.WarrantyNumberInventoryDao">
 
     <resultMap type="com.ks.ny.entity.WarrantyNumberInventory" id="WarrantyNumberInventoryMap">
-        <result property="parentObjectid" column="parent_objectId" jdbcType="VARCHAR"/>
-        <result property="objectid" column="objectId" jdbcType="VARCHAR"/>
+        <result property="parentObjectId" column="parent_objectId" jdbcType="VARCHAR"/>
+        <result property="objectId" column="objectId" jdbcType="VARCHAR"/>
         <result property="warrantyNumber" column="warranty_number" jdbcType="VARCHAR"/>
         <result property="warrantyNumberInboundLength" column="warrantyNumber_inboundLength" jdbcType="INTEGER"/>
         <result property="warrantyNumberQuantityLength1" column="warrantyNumber_quantityLength_1" jdbcType="INTEGER"/>
@@ -22,19 +22,19 @@
     </resultMap>
 
     <!-- 批量插入 -->
-    <insert id="insertBatch" keyProperty="objectid" useGeneratedKeys="true">
-        insert into h3.warranty_number_inventory(parent_objectId, warranty_number, warrantyNumber_inboundLength, warrantyNumber_quantityLength_1, warrantyNumber_inventoryLength, warrantyNumber_region1, warrantyNumber_region1_length, warrantyNumber_region2, warrantyNumber_region2_length, warrantyNumber_region3, warrantyNumber_region3_length, warrantyNumber_region4, warrantyNumber_region4_length, warrantyNumber_region5, warrantyNumber_region5_length)
+    <insert id="insertBatch" keyProperty="objectId" useGeneratedKeys="false">
+        insert into h3.warranty_number_inventory(objectId,parent_objectId, warranty_number, warrantyNumber_inboundLength, warrantyNumber_quantityLength_1, warrantyNumber_inventoryLength, warrantyNumber_region1, warrantyNumber_region1_length, warrantyNumber_region2, warrantyNumber_region2_length, warrantyNumber_region3, warrantyNumber_region3_length, warrantyNumber_region4, warrantyNumber_region4_length, warrantyNumber_region5, warrantyNumber_region5_length)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.parentObjectid}, #{entity.warrantyNumber}, #{entity.warrantyNumberInboundLength}, #{entity.warrantyNumberQuantityLength1}, #{entity.warrantyNumberInventoryLength}, #{entity.warrantyNumberRegion1}, #{entity.warrantyNumberRegion1Length}, #{entity.warrantyNumberRegion2}, #{entity.warrantyNumberRegion2Length}, #{entity.warrantyNumberRegion3}, #{entity.warrantyNumberRegion3Length}, #{entity.warrantyNumberRegion4}, #{entity.warrantyNumberRegion4Length}, #{entity.warrantyNumberRegion5}, #{entity.warrantyNumberRegion5Length})
+        (#{entity.objectId},#{entity.parentObjectId}, #{entity.warrantyNumber}, #{entity.warrantyNumberInboundLength}, #{entity.warrantyNumberQuantityLength1}, #{entity.warrantyNumberInventoryLength}, #{entity.warrantyNumberRegion1}, #{entity.warrantyNumberRegion1Length}, #{entity.warrantyNumberRegion2}, #{entity.warrantyNumberRegion2Length}, #{entity.warrantyNumberRegion3}, #{entity.warrantyNumberRegion3Length}, #{entity.warrantyNumberRegion4}, #{entity.warrantyNumberRegion4Length}, #{entity.warrantyNumberRegion5}, #{entity.warrantyNumberRegion5Length})
         </foreach>
     </insert>
     <!-- 批量插入或按主键更新 -->
-    <insert id="insertOrUpdateBatch" keyProperty="objectid" useGeneratedKeys="true">
-        insert into h3.warranty_number_inventory(parent_objectId, warranty_number, warrantyNumber_inboundLength, warrantyNumber_quantityLength_1, warrantyNumber_inventoryLength, warrantyNumber_region1, warrantyNumber_region1_length, warrantyNumber_region2, warrantyNumber_region2_length, warrantyNumber_region3, warrantyNumber_region3_length, warrantyNumber_region4, warrantyNumber_region4_length, warrantyNumber_region5, warrantyNumber_region5_length)
+    <insert id="insertOrUpdateBatch" keyProperty="objectId" useGeneratedKeys="false">
+        insert into h3.warranty_number_inventory(objectId,parent_objectId, warranty_number, warrantyNumber_inboundLength, warrantyNumber_quantityLength_1, warrantyNumber_inventoryLength, warrantyNumber_region1, warrantyNumber_region1_length, warrantyNumber_region2, warrantyNumber_region2_length, warrantyNumber_region3, warrantyNumber_region3_length, warrantyNumber_region4, warrantyNumber_region4_length, warrantyNumber_region5, warrantyNumber_region5_length)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.parentObjectid}, #{entity.warrantyNumber}, #{entity.warrantyNumberInboundLength}, #{entity.warrantyNumberQuantityLength1}, #{entity.warrantyNumberInventoryLength}, #{entity.warrantyNumberRegion1}, #{entity.warrantyNumberRegion1Length}, #{entity.warrantyNumberRegion2}, #{entity.warrantyNumberRegion2Length}, #{entity.warrantyNumberRegion3}, #{entity.warrantyNumberRegion3Length}, #{entity.warrantyNumberRegion4}, #{entity.warrantyNumberRegion4Length}, #{entity.warrantyNumberRegion5}, #{entity.warrantyNumberRegion5Length})
+            (#{entity.objectId},#{entity.parentObjectId}, #{entity.warrantyNumber}, #{entity.warrantyNumberInboundLength}, #{entity.warrantyNumberQuantityLength1}, #{entity.warrantyNumberInventoryLength}, #{entity.warrantyNumberRegion1}, #{entity.warrantyNumberRegion1Length}, #{entity.warrantyNumberRegion2}, #{entity.warrantyNumberRegion2Length}, #{entity.warrantyNumberRegion3}, #{entity.warrantyNumberRegion3Length}, #{entity.warrantyNumberRegion4}, #{entity.warrantyNumberRegion4Length}, #{entity.warrantyNumberRegion5}, #{entity.warrantyNumberRegion5Length})
         </foreach>
         on duplicate key update
          parent_objectId = values(parent_objectId) , warranty_number = values(warranty_number) , warrantyNumber_inboundLength = values(warrantyNumber_inboundLength) , warrantyNumber_quantityLength_1 = values(warrantyNumber_quantityLength_1) , warrantyNumber_inventoryLength = values(warrantyNumber_inventoryLength) , warrantyNumber_region1 = values(warrantyNumber_region1) , warrantyNumber_region1_length = values(warrantyNumber_region1_length) , warrantyNumber_region2 = values(warrantyNumber_region2) , warrantyNumber_region2_length = values(warrantyNumber_region2_length) , warrantyNumber_region3 = values(warrantyNumber_region3) , warrantyNumber_region3_length = values(warrantyNumber_region3_length) , warrantyNumber_region4 = values(warrantyNumber_region4) , warrantyNumber_region4_length = values(warrantyNumber_region4_length) , warrantyNumber_region5 = values(warrantyNumber_region5) , warrantyNumber_region5_length = values(warrantyNumber_region5_length)     </insert>

@@ -3,11 +3,10 @@ package com.ks.ny.entity.vo;
 import com.alibaba.excel.annotation.ExcelProperty;
 
 public class WarrantyNumberInventoryVO {
-
+    @ExcelProperty("质保号库存.记录ID(不可修改)")
+    private String objectId;
     @ExcelProperty("记录ID(不可修改)")
     private String parentObjectId;
-    @ExcelProperty("质保号库存.记录ID(不可修改)")
-     private String objectId;
     @ExcelProperty("质保号库存.质保号")
     private String warrantyNumber;
 
