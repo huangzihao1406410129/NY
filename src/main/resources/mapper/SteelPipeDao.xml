@@ -3,7 +3,7 @@
 <mapper namespace="com.ks.ny.dao.SteelPipeDao">
 
     <resultMap type="com.ks.ny.entity.SteelPipe" id="SteelPipeMap">
-        <result property="objectId" column="objectId" jdbcType="VARCHAR"/>
+        <result property="objectId" column="object_id" jdbcType="VARCHAR"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
         <result property="itemStatus" column="item_status" jdbcType="VARCHAR"/>
         <result property="standardYn" column="standard_yn" jdbcType="VARCHAR"/>
@@ -25,37 +25,37 @@
         <result property="wallThicknessSpecifications" column="wall_thickness_specifications" jdbcType="VARCHAR"/>
         <result property="unit" column="unit" jdbcType="VARCHAR"/>
         <result property="f0000045" column="F0000045" jdbcType="VARCHAR"/>
-        <result property="theoreticalWeight" column="theoretical_weight" jdbcType="DECIMAL"/>
+        <result property="theoreticalWeight" column="theoretical_weight" jdbcType="DOUBLE"/>
         <result property="f0000020" column="F0000020" jdbcType="VARCHAR"/>
         <result property="f0000023" column="F0000023" jdbcType="VARCHAR"/>
         <result property="f0000118" column="F0000118" jdbcType="VARCHAR"/>
-        <result property="length" column="length" jdbcType="DECIMAL"/>
-        <result property="width" column="width" jdbcType="DECIMAL"/>
-        <result property="inboundLength" column="inbound_length" jdbcType="DECIMAL"/>
-        <result property="processLength" column="process_length" jdbcType="DECIMAL"/>
-        <result property="quantityConsumed" column="quantity_consumed" jdbcType="DECIMAL"/>
-        <result property="inventoryLength" column="inventory_length" jdbcType="DECIMAL"/>
-        <result property="inventoryWeight" column="inventory_weight" jdbcType="DECIMAL"/>
-        <result property="warrantyNumberLength" column="warranty_numbe_length" jdbcType="DECIMAL"/>
+        <result property="length" column="length" jdbcType="INTEGER"/>
+        <result property="width" column="width" jdbcType="INTEGER"/>
+        <result property="inboundLength" column="inbound_length" jdbcType="INTEGER"/>
+        <result property="processLength" column="process_length" jdbcType="INTEGER"/>
+        <result property="quantityConsumed" column="quantity_consumed" jdbcType="INTEGER"/>
+        <result property="inventoryLength" column="inventory_length" jdbcType="INTEGER"/>
+        <result property="inventoryWeight" column="inventory_weight" jdbcType="INTEGER"/>
+        <result property="warrantyNumberLength" column="warranty_number_length" jdbcType="INTEGER"/>
     </resultMap>
 
     <!-- 批量插入 -->
     <insert id="insertBatch" keyProperty="objectId" useGeneratedKeys="false">
-        insert into h3.steel_pipe(objectId, name, item_status, standard_yn, warranty_confirmed, ascription, standard, item_material, F0000039, F0000040, F0000048, F0000049, item_code, item_full_name, base_standard_number, description, material, specification, diameter_specifications, wall_thickness_specifications, unit, F0000045, theoretical_weight, F0000020, F0000023, F0000118, length, width, inbound_length, process_length, quantity_consumed, inventory_length, inventory_weight, warranty_numbe_length)
+        insert into h3.steel_pipe(name, item_status, standard_yn, warranty_confirmed, ascription, standard, item_material, F0000039, F0000040, F0000048, F0000049, item_code, item_full_name, base_standard_number, description, material, specification, diameter_specifications, wall_thickness_specifications, unit, F0000045, theoretical_weight, F0000020, F0000023, F0000118, length, width, inbound_length, process_length, quantity_consumed, inventory_length, inventory_weight, warranty_number_length)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.objectId},#{entity.name}, #{entity.itemStatus}, #{entity.standardYn}, #{entity.warrantyConfirmed}, #{entity.ascription}, #{entity.standard}, #{entity.itemMaterial}, #{entity.f0000039}, #{entity.f0000040}, #{entity.f0000048}, #{entity.f0000049}, #{entity.itemCode}, #{entity.itemFullName}, #{entity.baseStandardNumber}, #{entity.description}, #{entity.material}, #{entity.specification}, #{entity.diameterSpecifications}, #{entity.wallThicknessSpecifications}, #{entity.unit}, #{entity.f0000045}, #{entity.theoreticalWeight}, #{entity.f0000020}, #{entity.f0000023}, #{entity.f0000118}, #{entity.length}, #{entity.width}, #{entity.inboundLength}, #{entity.processLength}, #{entity.quantityConsumed}, #{entity.inventoryLength}, #{entity.inventoryWeight}, #{entity.warrantyNumberLength})
+        (#{entity.name}, #{entity.itemStatus}, #{entity.standardYn}, #{entity.warrantyConfirmed}, #{entity.ascription}, #{entity.standard}, #{entity.itemMaterial}, #{entity.f0000039}, #{entity.f0000040}, #{entity.f0000048}, #{entity.f0000049}, #{entity.itemCode}, #{entity.itemFullName}, #{entity.baseStandardNumber}, #{entity.description}, #{entity.material}, #{entity.specification}, #{entity.diameterSpecifications}, #{entity.wallThicknessSpecifications}, #{entity.unit}, #{entity.f0000045}, #{entity.theoreticalWeight}, #{entity.f0000020}, #{entity.f0000023}, #{entity.f0000118}, #{entity.length}, #{entity.width}, #{entity.inboundLength}, #{entity.processLength}, #{entity.quantityConsumed}, #{entity.inventoryLength}, #{entity.inventoryWeight}, #{entity.warrantyNumberLength})
         </foreach>
     </insert>
     <!-- 批量插入或按主键更新 -->
     <insert id="insertOrUpdateBatch" keyProperty="objectId" useGeneratedKeys="false">
-        insert into h3.steel_pipe(objectId,name, item_status, standard_yn, warranty_confirmed, ascription, standard, item_material, F0000039, F0000040, F0000048, F0000049, item_code, item_full_name, base_standard_number, description, material, specification, diameter_specifications, wall_thickness_specifications, unit, F0000045, theoretical_weight, F0000020, F0000023, F0000118, length, width, inbound_length, process_length, quantity_consumed, inventory_length, inventory_weight, warranty_numbe_length)
+        insert into h3.steel_pipe(name, item_status, standard_yn, warranty_confirmed, ascription, standard, item_material, F0000039, F0000040, F0000048, F0000049, item_code, item_full_name, base_standard_number, description, material, specification, diameter_specifications, wall_thickness_specifications, unit, F0000045, theoretical_weight, F0000020, F0000023, F0000118, length, width, inbound_length, process_length, quantity_consumed, inventory_length, inventory_weight, warranty_number_length)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.objectId},#{entity.name}, #{entity.itemStatus}, #{entity.standardYn}, #{entity.warrantyConfirmed}, #{entity.ascription}, #{entity.standard}, #{entity.itemMaterial}, #{entity.f0000039}, #{entity.f0000040}, #{entity.f0000048}, #{entity.f0000049}, #{entity.itemCode}, #{entity.itemFullName}, #{entity.baseStandardNumber}, #{entity.description}, #{entity.material}, #{entity.specification}, #{entity.diameterSpecifications}, #{entity.wallThicknessSpecifications}, #{entity.unit}, #{entity.f0000045}, #{entity.theoreticalWeight}, #{entity.f0000020}, #{entity.f0000023}, #{entity.f0000118}, #{entity.length}, #{entity.width}, #{entity.inboundLength}, #{entity.processLength}, #{entity.quantityConsumed}, #{entity.inventoryLength}, #{entity.inventoryWeight}, #{entity.warrantyNumberLength})
+            (#{entity.name}, #{entity.itemStatus}, #{entity.standardYn}, #{entity.warrantyConfirmed}, #{entity.ascription}, #{entity.standard}, #{entity.itemMaterial}, #{entity.f0000039}, #{entity.f0000040}, #{entity.f0000048}, #{entity.f0000049}, #{entity.itemCode}, #{entity.itemFullName}, #{entity.baseStandardNumber}, #{entity.description}, #{entity.material}, #{entity.specification}, #{entity.diameterSpecifications}, #{entity.wallThicknessSpecifications}, #{entity.unit}, #{entity.f0000045}, #{entity.theoreticalWeight}, #{entity.f0000020}, #{entity.f0000023}, #{entity.f0000118}, #{entity.length}, #{entity.width}, #{entity.inboundLength}, #{entity.processLength}, #{entity.quantityConsumed}, #{entity.inventoryLength}, #{entity.inventoryWeight}, #{entity.warrantyNumberLength})
         </foreach>
         on duplicate key update
-         name = values(name) , item_status = values(item_status) , standard_yn = values(standard_yn) , warranty_confirmed = values(warranty_confirmed) , ascription = values(ascription) , standard = values(standard) , item_material = values(item_material) , F0000039 = values(F0000039) , F0000040 = values(F0000040) , F0000048 = values(F0000048) , F0000049 = values(F0000049) , item_code = values(item_code) , item_full_name = values(item_full_name) , base_standard_number = values(base_standard_number) , description = values(description) , material = values(material) , specification = values(specification) , diameter_specifications = values(diameter_specifications) , wall_thickness_specifications = values(wall_thickness_specifications) , unit = values(unit) , F0000045 = values(F0000045) , theoretical_weight = values(theoretical_weight) , F0000020 = values(F0000020) , F0000023 = values(F0000023) , F0000118 = values(F0000118) , length = values(length) , width = values(width) , inbound_length = values(inbound_length) , process_length = values(process_length) , quantity_consumed = values(quantity_consumed) , inventory_length = values(inventory_length) , inventory_weight = values(inventory_weight) , warranty_numbe_length = values(warranty_numbe_length)     </insert>
+         name = values(name) , item_status = values(item_status) , standard_yn = values(standard_yn) , warranty_confirmed = values(warranty_confirmed) , ascription = values(ascription) , standard = values(standard) , item_material = values(item_material) , F0000039 = values(F0000039) , F0000040 = values(F0000040) , F0000048 = values(F0000048) , F0000049 = values(F0000049) , item_code = values(item_code) , item_full_name = values(item_full_name) , base_standard_number = values(base_standard_number) , description = values(description) , material = values(material) , specification = values(specification) , diameter_specifications = values(diameter_specifications) , wall_thickness_specifications = values(wall_thickness_specifications) , unit = values(unit) , F0000045 = values(F0000045) , theoretical_weight = values(theoretical_weight) , F0000020 = values(F0000020) , F0000023 = values(F0000023) , F0000118 = values(F0000118) , length = values(length) , width = values(width) , inbound_length = values(inbound_length) , process_length = values(process_length) , quantity_consumed = values(quantity_consumed) , inventory_length = values(inventory_length) , inventory_weight = values(inventory_weight) , warranty_number_length = values(warranty_number_length)     </insert>
 
 </mapper>
 

@@ -22,7 +22,7 @@ public class WarrantyNumberInventory extends Model<WarrantyNumberInventory> {
     //入库总长度mm
     private Integer warrantyNumberInboundLength;
     //消耗长度mm
-    private Integer warrantyNumberQuantityLength1;
+    private Integer warrantyNumberQuantityLength;
     //剩余长度mm
     private Integer warrantyNumberInventoryLength;
     //区域1
@@ -78,12 +78,12 @@ public class WarrantyNumberInventory extends Model<WarrantyNumberInventory> {
         this.warrantyNumberInboundLength = warrantyNumberInboundLength;
     }
 
-    public Integer getWarrantyNumberQuantityLength1() {
-        return warrantyNumberQuantityLength1;
+    public Integer getWarrantyNumberQuantityLength() {
+        return warrantyNumberQuantityLength;
     }
 
-    public void setWarrantyNumberQuantityLength1(Integer warrantyNumberQuantityLength1) {
-        this.warrantyNumberQuantityLength1 = warrantyNumberQuantityLength1;
+    public void setWarrantyNumberQuantityLength(Integer warrantyNumberQuantityLength) {
+        this.warrantyNumberQuantityLength = warrantyNumberQuantityLength;
     }
 
     public Integer getWarrantyNumberInventoryLength() {

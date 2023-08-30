@@ -2,6 +2,8 @@ package com.ks.ny.entity.vo;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 
+import javax.sql.rowset.serial.SQLOutputImpl;
+
 public class ExcelReadVO {
     @ExcelProperty("姓名")
     String name;
@@ -9,7 +11,6 @@ public class ExcelReadVO {
     Integer age;
     @ExcelProperty("地址")
     String address;
-
     public String getName() {
         return name;
     }

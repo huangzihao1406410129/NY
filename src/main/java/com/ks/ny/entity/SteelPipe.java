@@ -68,21 +68,21 @@ public class SteelPipe extends Model<SteelPipe> {
     //金蝶规格型号
     private String f0000118;
     //长/mm
-    private Double length;
+    private Integer length;
     //宽/mm
-    private Double width;
+    private Integer width;
     //入库总数量/mm
-    private Double inboundLength;
+    private Integer inboundLength;
     //流程进行中的数量/mm
-    private Double processLength;
+    private Integer processLength;
     //消耗的数量/mm
-    private Double quantityConsumed;
+    private Integer quantityConsumed;
     //剩余库存数量/mm
-    private Double inventoryLength;
+    private Integer inventoryLength;
     //理论剩余重量/kg
-    private Double inventoryWeight;
+    private Integer inventoryWeight;
     //质保号库存数量mm
-    private Double warrantyNumberLength;
+    private Integer warrantyNumberLength;
 
 
     public String getObjectId() {
@@ -293,67 +293,67 @@ public class SteelPipe extends Model<SteelPipe> {
         this.f0000118 = f0000118;
     }
 
-    public Double getLength() {
+    public Integer getLength() {
         return length;
     }
 
-    public void setLength(Double length) {
+    public void setLength(Integer length) {
         this.length = length;
     }
 
-    public Double getWidth() {
+    public Integer getWidth() {
         return width;
     }
 
-    public void setWidth(Double width) {
+    public void setWidth(Integer width) {
         this.width = width;
     }
 
-    public Double getInboundLength() {
+    public Integer getInboundLength() {
         return inboundLength;
     }
 
-    public void setInboundLength(Double inboundLength) {
+    public void setInboundLength(Integer inboundLength) {
         this.inboundLength = inboundLength;
     }
 
-    public Double getProcessLength() {
+    public Integer getProcessLength() {
         return processLength;
     }
 
-    public void setProcessLength(Double processLength) {
+    public void setProcessLength(Integer processLength) {
         this.processLength = processLength;
     }
 
-    public Double getQuantityConsumed() {
+    public Integer getQuantityConsumed() {
         return quantityConsumed;
     }
 
-    public void setQuantityConsumed(Double quantityConsumed) {
+    public void setQuantityConsumed(Integer quantityConsumed) {
         this.quantityConsumed = quantityConsumed;
     }
 
-    public Double getInventoryLength() {
+    public Integer getInventoryLength() {
         return inventoryLength;
     }
 
-    public void setInventoryLength(Double inventoryLength) {
+    public void setInventoryLength(Integer inventoryLength) {
         this.inventoryLength = inventoryLength;
     }
 
-    public Double getInventoryWeight() {
+    public Integer getInventoryWeight() {
         return inventoryWeight;
     }
 
-    public void setInventoryWeight(Double inventoryWeight) {
+    public void setInventoryWeight(Integer inventoryWeight) {
         this.inventoryWeight = inventoryWeight;
     }
 
-    public Double getWarrantyNumberLength() {
+    public Integer getWarrantyNumberLength() {
         return warrantyNumberLength;
     }
 
-    public void setWarrantyNumberLength(Double warrantyNumbeLength) {
+    public void setWarrantyNumberLength(Integer warrantyNumbeLength) {
         this.warrantyNumberLength = warrantyNumbeLength;
     }
 

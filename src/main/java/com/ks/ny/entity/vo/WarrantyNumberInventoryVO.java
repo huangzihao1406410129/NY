@@ -14,7 +14,7 @@ public class WarrantyNumberInventoryVO {
     private Integer warrantyNumberInboundLength;
 
     @ExcelProperty("质保号库存.消耗长度mm")
-    private Integer warrantyNumberQuantityLength1;
+    private Integer warrantyNumberQuantityLength;
 
     @ExcelProperty("质保号库存.剩余长度mm")
     private Integer warrantyNumberInventoryLength;
@@ -74,12 +74,12 @@ public class WarrantyNumberInventoryVO {
         this.warrantyNumberInboundLength = warrantyNumberInboundLength;
     }
 
-    public Integer getWarrantyNumberQuantityLength1() {
-        return warrantyNumberQuantityLength1;
+    public Integer getWarrantyNumberQuantityLength() {
+        return warrantyNumberQuantityLength;
     }
 
-    public void setWarrantyNumberQuantityLength1(Integer warrantyNumberQuantityLength1) {
-        this.warrantyNumberQuantityLength1 = warrantyNumberQuantityLength1;
+    public void setWarrantyNumberQuantityLength(Integer warrantyNumberQuantityLength) {
+        this.warrantyNumberQuantityLength = warrantyNumberQuantityLength;
     }
 
     public Integer getWarrantyNumberInventoryLength() {
